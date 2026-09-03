@@ -28,8 +28,9 @@ jobs:
 
       - name: Audit the Cask
         run: |
-          brew style Casks/kavranta.rb
-          brew audit --cask --strict Casks/kavranta.rb
+          brew tap haechan1103/tap "${GITHUB_WORKSPACE}"
+          brew style haechan1103/tap/kavranta
+          brew audit --cask --strict haechan1103/tap/kavranta
 
       - name: Commit an updated version
         run: |
