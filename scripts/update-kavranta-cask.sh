@@ -19,6 +19,12 @@ if [[ "$(jq -er '.immutable' <<<"${release_json}")" != "true" ]]; then
   exit 1
 fi
 
+current_version="$(ruby -ne 'puts $1 if $_ =~ /^  version "([^"]+)"/' "${cask_path}")"
+if [[ "${current_version}" == "${version}" ]]; then
+  echo "Kavranta Cask is already synchronized with v${version}."
+  exit 0
+fi
+
 arm_name="Kavranta_${version}_aarch64.dmg"
 intel_name="Kavranta_${version}_x64.dmg"
 arm_url="$(jq -er --arg name "${arm_name}" '.assets[] | select(.name == $name) | .browser_download_url' <<<"${release_json}")"
