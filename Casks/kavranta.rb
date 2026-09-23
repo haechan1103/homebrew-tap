@@ -1,9 +1,9 @@
 cask "kavranta" do
   arch arm: "aarch64", intel: "x64"
 
-  version "0.7.10"
-  sha256 arm:   "bb0915ccf204c1ee69c5a22bb5bd80c8424d169c4f722f9a2dab183c61293fa3",
-         intel: "e430851cc76d5fa636278788876db5364b33899d19892bed4f9a1175cb9ba241"
+  version "0.7.11"
+  sha256 arm:   "cb1a71d15ea49eb64eb06578dd01f1c5a4eb4e0f808689b7c227e5222df6957a",
+         intel: "9cb5e05bbaca663cdb3255505d2fe0ec201bcfaa3151174babca1d816599b606"
 
   url "https://github.com/haechan1103/kavranta/releases/download/v#{version}/Kavranta_#{version}_#{arch}.dmg"
   name "Kavranta"
