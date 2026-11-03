@@ -29,6 +29,9 @@ jobs:
       - name: Audit the Cask
         run: |
           brew tap haechan1103/tap "${GITHUB_WORKSPACE}"
+          # Homebrew 6 refuses to load casks from untrusted third-party taps.
+          # Trust only this cask, not the whole tap.
+          brew trust --cask haechan1103/tap/kavranta
           brew style haechan1103/tap/kavranta
           brew audit --cask --strict haechan1103/tap/kavranta
 
